@@ -1,7 +1,7 @@
 ---
 title: "Initial Korean covid 19"
-author: "your name here"
-date: "todays date"
+author: "leia"
+date: "fall 2023"
 output:
   html_document: default
   pdf_document: default
@@ -24,13 +24,23 @@ mutate(across(where(is.character), as.factor))
 Some of the data was uncoded for sex - sex must be just male or female
 77 of the data entries were coded sex  as blank, so we omit these.
 state of a patient must be died or alive - we adjust that as well   
+ 
+ 
+```{r}
+str(kRdata)
+```
   
 # Your Question - Is dying independent of sex?
 
+$H_0$ there is no difference in dying based on sex
 
+$H_A$ there is no difference in dying bases on sex 
 
+## Method
 
+the variable sex is categorical and the variable results are categorical, so therefore we us cat~cat
 
+## Results 
 
 ## Graphical results - use ggplot commands to do this  
 
