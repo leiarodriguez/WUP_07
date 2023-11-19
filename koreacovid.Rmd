@@ -50,8 +50,8 @@ dd2 <- kRdata %>% group_by(result,Sex) %>% summarize(count=n()) %>% mutate(prcnt
 
 # the group_by followed by summarize(count=n())
 
-basicC <- ggplot(dd2,aes(x=sex,y=count,fill=result))
-basicC + geom_bar(stat="identity",position="dodge")
+basicC <- ggplot(dd2,aes(x=Sex,y=count,fill=result))
+basicC + geom_bar (stat="identity",position="dodge") 
 
 #Now for percentage plot
 
@@ -83,3 +83,4 @@ this table show the p value in the chi-square stat, which is 0.0012. the p calue
 
 ## Conclusions
 
+the question is " is dying the independent of sex. in conclusion more females that stayed alive during covid than males. males were more prone to getting covid. the p value was 0.0012 and 0.0009, which we reject the null hypothesis 
