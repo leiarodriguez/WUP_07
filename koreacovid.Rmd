@@ -44,19 +44,37 @@ the variable sex is categorical and the variable results are categorical, so the
 
 ## Graphical results - use ggplot commands to do this  
 
+```{r}
+dd2 <- kRdata %>% group_by(result,Sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
 
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=sex,y=count,fill=result))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=Sex,y=prcnt*100,fill=result)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
   
+this bar chart shows the percentage of male and female who died from covid, and shows people who had it but are still alive. 
 
+## Numerical results 
 
+```{r}
+table1 <- xtabs(~result + sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
 
-
-
-  
-## Numerical results
-
+this table shows the percentageof male and female who had covid that is alive and the percentage of who died. male survivors percentage is 44% and the female surviors is 56%. 
 
 ## Inferential results 
+```{r}
+
+```
 
 
 
