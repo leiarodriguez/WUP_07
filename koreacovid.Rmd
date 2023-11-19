@@ -73,10 +73,12 @@ this table shows the percentageof male and female who had covid that is alive an
 
 ## Inferential results 
 ```{r}
-
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
 ```
 
-
+this table show the p value in the chi-square stat, which is 0.0012. the p calue in the fisher test, which is 0.0009. therefore we reject both null hypothesis.  
 
 
 ## Conclusions
